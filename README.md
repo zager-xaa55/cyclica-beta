@@ -16,16 +16,31 @@ the second iteration of Cyclica web client, complete with an engine and design o
   * ###### [MAYBE]Smartphone - Like `Slate`, but UI adapts to a single frame, with more frames shown in an overview mode. Linux/Windows may be used, though Android apps will be the main focus.  
   
   ### How do I install Cyclica Beta?
+  
   ## *Running from Localhost*
+  
   `mkdir cyclica-beta && cd cyclica-beta`
+  
+  
   `wget https://sourceforge.net/projects/turbovnc/files/2.2.2/turbovnc_2.2.2_amd64.deb/download && sudo dpkg -i download`
+  
+  
   `sudo /opt/TurboVNC/bin/vncserver`
+  
+  
   `wget https://github.com/novnc/noVNC/archive/v1.1.0.zip && sudo unzip noVNC-1.1.0.zip`
+  
+  
   `sudo apt install -f && sudo apt install websockify`
+  
+  
   `cd noVNC-1.1.0`
+  
+  
   `./utils/launch.sh --vnc localhost:5901`
    
-   run the output of that inside of a browser of your choice. If VNC isn't working, make sure your desktop environment is supported.
+  
+  run the output of that inside of a browser of your choice. If VNC isn't working, make sure your desktop environment is supported.
    
   
   
