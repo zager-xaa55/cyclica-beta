@@ -1,10 +1,10 @@
-# cyclica-beta
-the second iteration of Cyclica web client, complete with an engine and design overhaul.
+# Swyft
+Formerly known as cyclica-beta, Swyft is a desktop powered by web technologies that can be ran from any device, anywhere in the world- it can run Windows Apps, Linux apps, or even android Apps, breathing new life into your old computer or iPad like never before, and allowing a true low-cost cloud computer platform.
 
 ## what's new from alpha?
   we've changed from a stacking window manager to a tiling one- this was done as it is more tablet friendly, and allows for greater productivity. This feature is in alpha currently, so resizing isn't yet supported, though eventually we'll try and impliment dragging for tablets and keyboard shortcuts for a netbook form factors.
   
-  ### What types of devices will cyclica beta support?
+  ### What types of devices will swyft support?
   * ###### Desk - Any device with a mouse and keyboard, assumes a `HIDPI` screen
   
   * ###### Laptop - Same as Desktop, touch targets may be larger to accomodate a touch screen.
@@ -15,11 +15,11 @@ the second iteration of Cyclica web client, complete with an engine and design o
   
   * ###### [MAYBE]Smartphone - Like `Slate`, but UI adapts to a single frame, with more frames shown in an overview mode. Linux/Windows may be used, though Android apps will be the main focus.  
   
-  ### How do I install Cyclica Beta?
+  ### How do I install Swyft?
   
   ## *Running from Localhost*
   
-  `mkdir cyclica-beta && cd cyclica-beta`
+  `mkdir swyft && cd swyft`
   
   
   `wget https://sourceforge.net/projects/turbovnc/files/2.2.2/turbovnc_2.2.2_amd64.deb/download && sudo dpkg -i download`
@@ -45,4 +45,4 @@ the second iteration of Cyclica web client, complete with an engine and design o
   
   
   ## What's ready right now?
-  Currently, Cyclica Beta is just an HTML Document. The backend code still needs to be written. 
+  Currently, setup is quite the chore. We are working on creating a single script that runs everything and controls all processes to minimize the amount of work needed to be done by the end user, along with adding support for webkit and iOS devices. 
