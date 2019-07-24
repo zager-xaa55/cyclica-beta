@@ -16,10 +16,10 @@
 
     <img id="closeActive" src="res/icons/close-active.png">
     <img id="closeStasis" src="res/icons/close.png" onclick="closeActivePane()"><
-    
+
     <img id="closeAll-active" src="res/icons/closeAll-active.png" >
     <img id="closeAll" src="res/icons/closeAll.png" onclick="nukeAllPanes()"><
-    
+
     <button class="dockButton" id="setApps"> Click to Set Demo Apps </button>
   </div>
 
@@ -34,21 +34,21 @@
       desk = document.querySelector("#desk");
       //doing stuff
       var taskCount = 0;
-      
-      
+
+
       function newPane() {
       //initialize parent var
       //desk = document.querySelector("#desk");
         if(taskCount <= 0) {
           newFirstPane();
-         
+
           setAppsInFrame(); //TEMPORARY: Update this with novnc EDIT: nah
         }
         else if (taskCount == 1){
           taskCount=taskCount+1;
           //set and resize previous frame
           frame1 = document.querySelector("#"+taskName);
-	  
+
           frame1.style.width = "49%";
           frame1.style.float="left";
           //create and size new frame
@@ -59,10 +59,8 @@
           frame2.style.width = "49%";
           frame2.style.float="right";
           frame2.id = "frame2";
-          
-          setAppsInFrame(); //TEMPORARY: Update this with novnc 
 
-
+          frame2.setAttribute("src", "http://localhost:6020/vnc.html");
         //user adds a third window. Im so giddy to see this work with android apps!!
         }
         else if (taskCount == 2) {
@@ -84,8 +82,9 @@
           //frame3.style.background="grey"; not needed
           desk.appendChild(frame3);
           frame3.id = "frame3";
-          
-          setAppsInFrame(); //TEMPORARY: Update this with novnc 
+          frame3.setAttribute("src", "http://localhost:6030/vnc.html");
+
+          setAppsInFrame(); //TEMPORARY: Update this with novnc
         }
       }
       function newFirstPane() {
@@ -94,19 +93,19 @@
         //alert(taskName);
         desk = document.querySelector("#desk");
 	frame1 = document.createElement("iframe");
-	frame1.setAttribute("src", "../vnc.html?password=352146"); //EXPERIMENTAL, if something breaks, delete this.
+	frame1.setAttribute("src", "http://localhost:6010/vnc.html"); //EXPERIMENTAL, if something breaks, delete this.
         //frame1 = document.createElement("iframe");
         frame1.classList.add("frame");
         frame1.id=taskName;
         desk.appendChild(frame1);
       }
-      
+
       var focusedFrame;
       function setActivePane(frame) {
         frame1 = document.querySelector("#frame1");
         frame2 = document.querySelector("#frame2");
         frame3 = document.querySelector("#frame3");
-        
+
         focusedFrame = frame;
       }
 
@@ -116,7 +115,7 @@
         frame1 = document.querySelector("#frame1");
         frame2 = document.querySelector("#frame2");
         frame3 = document.querySelector("#frame3");
-        
+
         switch (taskCount) {
             case 3:
                 //alert("three frames in view");
@@ -126,7 +125,7 @@
                 frame2.style.height = "95%";
                 frame2.style.float="right";
                 break;
-                
+
             case 2:
                 frame2.style.opacity="0";
                 desk.removeChild(frame2);
@@ -134,13 +133,13 @@
                 //resize frame1
                 frame1.style.width = "100%";
                 break;
-                
-            case 1: 
+
+            case 1:
                 frame1.style.opacity="0";
                 desk.removeChild(frame1);
                 taskCount=0;
                 break;
-            
+
             default:
                 alert("no activities to close");
         }
@@ -150,23 +149,23 @@
           frame2.setAttribute("src", "res/test-site-2.html");
           frame3.setAttribute("src", "res/test-site-3.html");*/
       }
-      
-      
+
+
       function nukeAllPanes() {
           desk = document.querySelector("#desk")
           frame1 = document.querySelector("#frame1");
           frame2 = document.querySelector("#frame2");
           frame3 = document.querySelector("#frame3");
-          
+
           frame1.style.opacity = "0";
           frame2.style.opacity = "0";
           frame3.style.opacity = "0";
-          
+
           desk.removeChild(frame1);
           desk.removeChild(frame2);
           desk.removeChild(frame3);
-          
+
           taskCount = 0;
-          
+
       }
 </script>
