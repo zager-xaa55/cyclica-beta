@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="internal.css">
 
 <body>
+  <div id="screen">
   <div id="desk">
 
 
@@ -20,14 +21,26 @@
     <img id="closeAll-active" src="res/icons/closeAll-active.png" >
     <img id="closeAll" src="res/icons/closeAll.png" onclick="nukeAllPanes()"><
 
-    <button class="dockButton" id="setApps"> Click to Set Demo Apps </button>
+    <button onclick="fullSCREEN()" class="dockButton" id="setApps">Open Full Screen</button>
   </div>
-
+  </div>
 </body>
 
 <!--pasted code from ui.js-->
 <!-- honestly it's lighter and easier than having to link everything up when calling functions :p -->
 <script type="text/javascript">
+
+     //swyft cyclica desktop interface, created by Michael Dinwiddie, 2019.
+
+      /*var connectedIP = "localhost";
+      connectedIP = alert("server IP: ");
+      */
+	
+
+      var SCREEN=document.getElementById("screen");
+      function fullSCREEN() {SCREEN.requestFullscreen();}
+
+
       frame1 = document.querySelector("#frame1");
       frame2 = document.querySelector("#frame2");
       frame3 = document.querySelector("#frame3");
@@ -60,7 +73,7 @@
           frame2.style.float="right";
           frame2.id = "frame2";
 
-          frame2.setAttribute("src", "http://localhost:6020/vnc.html");
+          frame2.setAttribute("src", "http://10.0.0.164:6020/vnc.html?resize=remote&password=352146&autoconnect=true");
         //user adds a third window. Im so giddy to see this work with android apps!!
         }
         else if (taskCount == 2) {
@@ -82,7 +95,7 @@
           //frame3.style.background="grey"; not needed
           desk.appendChild(frame3);
           frame3.id = "frame3";
-          frame3.setAttribute("src", "http://localhost:6030/vnc.html");
+          frame3.setAttribute("src", "http://10.0.0.164:6030/vnc.html?resize=remote&password=352146&autoconnect=true");
 
           setAppsInFrame(); //TEMPORARY: Update this with novnc
         }
@@ -93,7 +106,7 @@
         //alert(taskName);
         desk = document.querySelector("#desk");
 	frame1 = document.createElement("iframe");
-	frame1.setAttribute("src", "http://localhost:6010/vnc.html"); //EXPERIMENTAL, if something breaks, delete this.
+	frame1.setAttribute("src", "http://10.0.0.164:6010/vnc.html?resize=remote&password=352146&autoconnect=true"); //EXPERIMENTAL, if something breaks, delete this.
         //frame1 = document.createElement("iframe");
         frame1.classList.add("frame");
         frame1.id=taskName;
